@@ -13,8 +13,8 @@ trap clean_exit EXIT SIGINT SIGTERM SIGHUP
 
 echo "* Getting firmware list"
 
-FW_URI_LIST=$(curl -s -k -o- "https://api.github.com/repos/zvldz/mgl03_fw/git/trees/main?recursive=1" | grep custom | grep mod | grep zip | sort | cut -f4 -d'"')
-FW_URI_LIST_STOCK=$(curl -s -k -o- "https://api.github.com/repos/zvldz/mgl03_fw/git/trees/main?recursive=1" | grep stock | grep zip | sort | cut -f4 -d'"')
+FW_URI_LIST=$(curl -s -k -o- "https://api.github.com/repos/anylines/mgl03_fw/git/trees/main?recursive=1" | grep custom | grep mod | grep zip | sort | cut -f4 -d'"')
+FW_URI_LIST_STOCK=$(curl -s -k -o- "https://api.github.com/repos/anylines/mgl03_fw/git/trees/main?recursive=1" | grep stock | grep zip | sort | cut -f4 -d'"')
 FW_URI_LIST="$FW_URI_LIST $FW_URI_LIST_STOCK"
 
 if [ -z "$FW_URI_LIST" ]; then
@@ -44,7 +44,7 @@ done
 
 FW_URI=$(echo $FW_URI_LIST | cut -d' ' -f$CHOICE)
 
-FW_URL="https://raw.githubusercontent.com/zvldz/mgl03_fw/main/${FW_URI}"
+FW_URL="https://raw.githubusercontent.com/anylines/mgl03_fw/main/${FW_URI}"
 
 CONTENT_LENGTH=$(curl -s -I -L -k $FW_URL | grep Content-Length | cut -f2 -d' ' | tr -d "\n\r")
 
