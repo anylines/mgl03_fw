@@ -19,5 +19,5 @@ Xiaomi Gateway v3 firmwares and update manuals
 
 转载自zvldz大神原创
 
-# 一键刷入改版固件
+# 一键刷入多模网关改版固件：
     curl -s -k -L -o /tmp/update.sh https://raw.githubusercontent.com/anylines/mgl03_fw/main/firmware/mgl03_update.sh && sh /tmp/update.sh
